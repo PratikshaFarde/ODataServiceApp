@@ -1,0 +1,22 @@
+<mvc:View xmlns:form="sap.ui.layout.form" controllerName="odataproject.controller.Details"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="id_page1" title="{i18n>title}">
+    <content>
+    <form:SimpleForm id="id_simpleForm" >
+        <Label id="id_productName" text="Product Name " />
+
+        <Text id= "id_txt_productName" text="{ProductName}" />
+
+        <Label id="id_unitPrice" text="Unit Price" />
+
+        <Text id= "id_txt_unitPrice" text="{UnitPrice}" /> 
+
+        <Label id="id_quantity" text="Quantity Per Unit" />
+
+        <Text id= "id_txt_quantity" text="{QuantityPerUnit}" /> 
+        
+    </form:SimpleForm>
+  </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,30 @@
+<mvc:View xmlns:form="sap.ui.layout.form"
+    controllerName="firstproject.controller.ViewRegister"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    id="idViewRegister">
+    <App id="idAppRegister">
+        <pages>
+            <Page id="idViewRegisterPage" title="Login">
+                <content>
+                    <form:SimpleForm id="idViewRegisterSimpleForm" editable="true"
+                        adjustLabelSpan="false" labelSpanL="4" labelSpanM="4" labelSpanS="12"
+                        columnsL="1" columnsM="1" title="Login Form"
+                        emptySpanL="4" emptySpanM="4" layout="ResponsiveGridLayout">
+                        <form:content>
+                            <Label id="idViewRegisterLabelUsername" text="User Name" />
+                            <Input id="idViewRegisterInputUsername" />
+
+                            <Label id="idViewRegisterLabelPassword" text="Password" />
+                            <Input id="idViewRegisterInputPassword" type="Password" />
+                       
+                        </form:content>
+                    </form:SimpleForm>
+                    <VBox id="idViewRegisterVBoxButtons" alignItems="Center" renderType="Bare" class="sapUiSmallMarginTop">
+                                <Button id="idViewRegisterBtnLogin" text="Login" type="Emphasized" press=".onLoginPress" />
+                            </VBox>
+                </content>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

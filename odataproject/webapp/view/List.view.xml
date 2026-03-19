@@ -1,0 +1,13 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="odataproject.controller.List"> 
+<Page id="id_page" title="{i18n>title}">
+<content>
+
+<SearchField xmlns="sap.m" placeholder="Search for ..." id="field0" search="handleSearch"/>
+
+<List id="list0" items="{/Products}" noDataText="{i18n>noDataText}">
+<StandardListItem id="item0" title="{ProductName}" description="{QuantityPerUnit}" icon="sap-icon://product" type="Navigation" press="onItemPress"/>
+</List>
+
+</content>
+</Page>
+</mvc:View>

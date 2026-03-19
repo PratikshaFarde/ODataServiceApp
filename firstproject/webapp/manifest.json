@@ -1,0 +1,115 @@
+{
+"_version": "1.82.0",
+"sap.app": {
+"id": "firstproject",
+"type": "application",
+"i18n": "i18n/i18n.properties",
+"applicationVersion": {
+"version": "0.0.1"
+},
+"title": "{{appTitle}}",
+"description": "{{appDescription}}",
+"resources": "resources.json",
+"sourceTemplate": {
+"id": "@sap/generator-fiori:basic",
+"version": "1.20.4",
+"toolsId": "6d1aba93-7bbd-4d89-ad14-7fb664bab3eb"
+}
+},
+"sap.ui": {
+"technology": "UI5",
+"icons": {
+"icon": "",
+"favIcon": "",
+"phone": "",
+"phone@2": "",
+"tablet": "",
+"tablet@2": ""
+},
+"deviceTypes": {
+"desktop": true,
+"tablet": true,
+"phone": true
+}
+},
+"sap.ui5": {
+"flexEnabled": true,
+"dependencies": {
+"minUI5Version": "1.145.0",
+"libs": {
+"sap.m": {},
+"sap.ui.core": {}
+}
+},
+"contentDensities": {
+"compact": true,
+"cozy": true
+},
+"models": {
+"i18n": {
+"type": "sap.ui.model.resource.ResourceModel",
+"settings": {
+"bundleName": "firstproject.i18n.i18n"
+}
+}
+},
+"resources": {
+"css": [
+{
+"uri": "css/style.css"
+}
+]
+},
+"routing": {
+"config": {
+"routerClass": "sap.m.routing.Router",
+"viewType": "XML",
+"viewPath": "firstproject.view",
+"controlId": "app",
+"controlAggregation": "pages",
+"async": true,
+"transition": "slide"
+},
+"routes": [
+{
+"name": "RouteViewRegister",
+"pattern": "",
+"target": [
+"TargetViewRegister"
+]
+},
+{
+"name": "RouteViewMain",
+"pattern": "ViewMain",
+"target": [
+"TargetViewMain"
+]
+}
+],
+"targets": {
+"TargetViewRegister": {
+"viewType": "XML",
+"transition": "slide",
+"clearControlAggregation": false,
+"viewId": "ViewRegister",
+"viewName": "ViewRegister",
+"viewLevel": 1
+},
+"TargetViewMain": {
+"viewType": "XML",
+"transition": "slide",
+"clearControlAggregation": false,
+"viewId": "ViewMain",
+"viewName": "ViewMain",
+"viewLevel": 2
+}
+}
+},
+"rootView": {
+"viewName": "firstproject.view.App",
+"type": "XML",
+"id": "app",
+"async": true
+}
+}
+}

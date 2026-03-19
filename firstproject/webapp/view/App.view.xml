@@ -1,0 +1,9 @@
+<mvc:View controllerName="firstproject.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+    <App id="app">
+        <!-- router will place views into the pages aggregation -->
+       
+    </App>
+</mvc:View>

@@ -1,0 +1,46 @@
+<mvc:View controllerName="firstproject.controller.ViewMain"
+xmlns:mvc="sap.ui.core.mvc"
+xmlns="sap.m"
+xmlns:form="sap.ui.layout.form"
+id="idViewMain">
+
+<form:SimpleForm id="idViewMainSimpleForm"
+layout="ResponsiveGridLayout"
+editable="true"
+adjustLabelSpan="false"
+labelSpanL="4"
+labelSpanM="4"
+labelSpanS="12"
+columnsL="1"
+columnsM="1"
+emptySpanL="0"
+emptySpanM="0"
+title="">
+<Label id="idViewMainLabelFirstName" text="First Name" />
+<Input id="idViewMainInputstName" placeholder="Enter first name" />
+
+<Label id="idViewMainLabelLastName" text="Last Name" />
+<Input id="idViewMainInputLastName" placeholder="Enter last name" />
+
+<Label id="idViewMainLabelEmail" text="Email" />
+<Input id="idViewMainInputEmail" type="Email" placeholder="Enter email" />
+
+<Label id="idViewMainLabelUsername" text="Username" />
+<Input id="idViewMainInputUsername" placeholder="Choose a username" />
+
+<Label id="idViewMainLabelPassword" text="Password" />
+<Input id="idViewMainInputPassword" type="Password" placeholder="Enter password" />
+
+<Label id="idViewMainLabelConfirmPassword" text="Confirm Password" />
+<Input id="idViewMainInputConfirmPassword" type="Password" placeholder="Confirm password" />
+
+<!-- spacer to force new row -->
+<Label text=" " />
+
+<!-- Buttons centered -->
+<VBox id="idViewMainVBoxButtons" alignItems="Center" renderType="Bare" class="sapUiSmallMarginTop">
+<Button id="idViewMainBtnRegister" text="Register" type="Emphasized" press=".onRegisterPress" />
+<Button id="idViewMainBtnCancel" text="Cancel" type="Transparent" press=".onCancelPress" class="sapUiSmallMarginTop" />
+</VBox>
+</form:SimpleForm>
+</mvc:View>

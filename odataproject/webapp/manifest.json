@@ -1,0 +1,131 @@
+{
+  "_version": "1.83.0",
+  "sap.app": {
+    "id": "odataproject",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.21.0",
+      "toolsId": "22678edc-2c2f-4c0f-b5fd-31de854662da"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/v2/northwind/northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.145.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "odataproject.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "odataproject.view",
+        "async": true,
+        "viewPath": "odataproject.view"
+      },
+      "routes": [
+        {
+          "name": "RouteViewList",
+          "pattern": "",
+          "target": [
+            "TargetList"
+          ]
+        },
+        {
+          "name": "RouteViewDetail",
+          "pattern": "products/{productId}",
+          "target": [
+            "TargetDetail"
+          ]
+        }
+      ],
+      "targets": {
+         "TargetList": {
+          "viewType": "XML",
+          "transition":"slide",
+          "clearControlAggregation": false,
+          "viewName": "List",
+           "viewLevel": 1
+        },
+         "TargetDetail": {
+          "viewType": "XML",
+          "transition":"slide",
+          "clearControlAggregation": false,
+          "viewName": "Details",
+           "viewLevel": 2
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "odataproject.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}
