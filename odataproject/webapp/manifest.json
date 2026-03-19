@@ -102,6 +102,13 @@
           "target": [
             "TargetDetail"
           ]
+        },
+        {
+          "name": "RouteViewTable",
+          "pattern": "Employees",
+          "target": [
+            "TargetTable"
+          ]
         }
       ],
       "targets": {
@@ -118,6 +125,13 @@
           "clearControlAggregation": false,
           "viewName": "Details",
            "viewLevel": 2
+        },
+         "TargetTable": {
+          "viewType": "XML",
+          "transition":"slide",
+          "clearControlAggregation": false,
+          "viewName": "Table",
+           "viewLevel": 3
         }
       }
     },

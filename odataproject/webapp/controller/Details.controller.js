@@ -1,10 +1,16 @@
 sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/core/UIComponent"], function(Controller, UIComponent){
 "use strict";
 return Controller.extend("odataproject.controller.Details", {
+
 onInit: function(){
 var oRouter = UIComponent.getRouterFor(this);
 oRouter.getRoute("RouteViewDetail").attachPatternMatched(this._onObjectMatched, this);
 },
+onNext: function(){
+    var router = sap.ui.core.UIComponent.getRouterFor(this);
+    router.navTo("RouteViewTable");
+},
+
 _onObjectMatched: function(oEvent){
 var oArgs = oEvent.getParameter("arguments");
 var sProductID = oArgs.productId; // numeric

@@ -16,6 +16,8 @@
 
         <Text id= "id_txt_quantity" text="{QuantityPerUnit}" /> 
         
+       <Button id="idNext" text="Next" press=".onNext" />
+
     </form:SimpleForm>
   </content>
     </Page>

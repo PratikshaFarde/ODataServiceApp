@@ -1,0 +1,60 @@
+<mvc:View xmlns:form="sap.ui.layout.form" controllerName="odataproject.controller.Table"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="idTablePage" title="{i18n>title}">
+        <customHeader>
+            <Bar id="idBar">
+                <contentLeft>
+                <Button id="idBackButton" icon="sap-icon://nav-back" press=".onNavBack"/>
+                </contentLeft>
+                <contentMiddle>
+                <Title id="idEmployeesTitle" text="Employees"/>
+                </contentMiddle>
+                <contentRight>
+                <Button id="idButton" icon="sap-icon://add" press=".onAddEmployee"/>
+                </contentRight>
+            </Bar>
+    </customHeader>
+    <content>
+        <Table id="idEmployeeTable" items="{/Employees}">
+            <columns>
+                <Column id="idEmpIdColumn">
+                    <Label id="idEmpLabel" text="Employee ID"></Label>
+                </Column>
+
+                <Column id="idEmpNameColumn">
+                    <Label id="idEmpNameLabel" text="Name"></Label>
+                </Column>
+
+                <Column id="idEmpDesigColumn">
+                    <Label id="idEmpDesigLabel" text="Designation"></Label>
+                </Column>
+
+                <Column id="idEmpPhoneColumn">
+                    <Label id="idEmpPhoneLabel" text="Phone No"></Label>
+                </Column>
+
+                <Column id="idEmpDobColumn">
+                    <Label id="idEmpDobLabel" text="DOB"></Label>
+                </Column>
+
+                <Column id="idEmpCiyColumn">
+                    <Label id="idEmpCityLabel" text="City"></Label>
+                </Column>
+            </columns>
+                <ColumnListItem id="idColumnListItem">
+                    <cells>
+
+                        <Text id="idEmpIdText" text="{EmployeeID}"></Text>
+                        <Text id="idEmpNameText" text="{= ${TitleOfCourtesy}+${FirstName} + ' ' + ${LastName} }"/>
+                        <Text id="idEmpDesigText" text="{Title}"/>
+                        <Text id="idPhoneText" text="{HomePhone}"></Text>
+                        <Text id="idEmpDobText" text="{parts: [{path: 'BirthDate'}], formatter: '.formatter.formatShortDate'}"/>
+                        <Text id="idEmpCityText" text="{City}"></Text>
+                
+                    </cells>
+                </ColumnListItem>
+        </Table>
+    </content>
+    </Page>
+</mvc:View>
