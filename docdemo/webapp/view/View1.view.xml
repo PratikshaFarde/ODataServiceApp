@@ -1,0 +1,44 @@
+<mvc:View controllerName="docdemo.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:u="sap.ui.unified"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Table id="idTable" items="{tableXLData>/results}">
+            <headerToolbar>
+                <OverflowToolbar id="idOT" >
+                    <content>
+                    <Title id="idUD" text="User Details"></Title>
+                    <ToolbarSpacer id="idTS"/>
+                    <u:FileUploader id="idHandleUpload" change="handleUpload" fileType="xlsx,xls" multiple="false" />
+                    </content>
+                </OverflowToolbar>
+            </headerToolbar>
+                <columns>
+                    <Column id="idColumn1">
+                        <Text id="idName" text="Name"/>
+                    </Column>
+                    <Column id="idColumn2">
+                        <Text id="idDesignation" text="Designation"/>
+                    </Column>
+                    <Column id="idColumn3">
+                        <Text id="idAddress" text="Address"/>
+                    </Column>
+                    <Column id="idColumn4">
+                        <Text id="idPhone" text="Phone Number"/>
+                    </Column>
+                </columns>
+                <items>
+                   <ColumnListItem id="idCli">
+                       <cells>
+                       <Text text="{tableXLData>Name}"/>
+                       <Text text="{tableXLData>Designation}"/>
+                       <Text text="{tableXLData>Address}"/>
+                       <Text text="{tableXLData>Phone}"/>
+                       </cells>
+                   </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

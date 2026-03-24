@@ -1,0 +1,44 @@
+<mvc:View controllerName="odatacrud.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <Table id="idProducts" items="{/results}">
+    <columns> 
+        <Column id="idIDCol">
+            <Text id="idColID" text="ID"></Text>
+        </Column>
+         <Column id="idNameCol">
+            <Text id="idColName" text="Name"></Text>
+        </Column>
+         <Column id="idDescriptionCol">
+            <Text id="idColDescription" text="Description"></Text>
+        </Column>
+         <Column id="idPriceCol">
+            <Text id="idColPrice" text="Price"></Text>
+        </Column>
+        <Column id="idRatingCol">
+            <Text id="idColRating" text="Rating"></Text>
+        </Column>
+         <Column id="idActionsCol">
+            <Text id="idColActions" text="Actions"></Text>
+        </Column>
+    </columns>
+    <items>
+    <ColumnListItem id="idColList">
+        <cells>
+            <Text id="idID" text="{ID}" />
+            <Text id="idName" text="{Name}"/>
+            <Text id="idDescription" text="{Description}"/>
+            <Text id="idPrice" text="{Price}" />
+            <Input id="idRating" value="{Rating}" editable ="false" />
+            <HBox id="idHBox">
+                <Button id="idEdit" text="Edit" press="onEdit"></Button>
+                <Button id="idDuplicate" text="Duplicate" press="onDuplicate" class = "sapUiSmallMarginBeginEnd"></Button>
+                <Button id="idDelete" text="Delete" press="onDelete"  type="Reject"></Button>
+            </HBox>
+        </cells>
+    </ColumnListItem>
+    </items>
+    </Table>
+    </Page>
+</mvc:View>
