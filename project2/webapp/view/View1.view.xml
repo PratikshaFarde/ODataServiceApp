@@ -1,0 +1,39 @@
+<mvc:View controllerName="project2.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <content>
+        <Table id="idProductTable" items="{/Products}" mode="MultiSelect">
+        <headerToolbar>
+            <OverflowToolbar id="idOToolbar">
+            <content>
+                <Title id="idLbl" text="Products"></Title>
+                <ToolbarSpacer id="idToolbar" />
+                <Button id="idBtnDownload" text="Download Excel" press="onDownload"></Button>
+            </content>
+            </OverflowToolbar>
+        </headerToolbar>
+            <columns>
+                <Column id="idColID">
+                    <Text id="idID" text="ID"></Text>
+                </Column>
+                <Column id="idColName">
+                    <Text id="idName" text="Name"></Text>
+                </Column>
+                <Column id="idColDesc">
+                    <Text id="idDesc" text="QuantityPerUnit"></Text>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem id="idColListItem">
+                    <cells>
+                    <Text id="idLblID" text="{ProductID}"></Text>
+                    <Text id="idLblName" text="{ProductName}"></Text>
+                    <Text id="idLblDesc" text="{QuantityPerUnit}"></Text>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+       </content> 
+    </Page>
+</mvc:View>

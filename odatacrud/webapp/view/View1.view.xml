@@ -2,7 +2,26 @@
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
+    <content>
+     <!-- Toolbar with inputs and Add button (uses only sap.m) -->
+      <OverflowToolbar id="idOToolbar" design="Transparent" class="sapUiSmallMargin">
+        <Label id="idLblName" text="Name" />
+        <Input id="inpName" width="200px" />
+        <Label id="idLblDesc" text="Description" />
+        <Input id="inpDescription" width="250px" />
+        <Label id="idLblPrice" text="Price" />
+        <Input id="inpPrice" width="120px" />
+        <Label id="idLblRating" text="Rating" />
+        <Input id="inpRating" width="120px" />
+        <ToolbarSpacer id="idToolbarSpacer"/>
+        <Button id="btnAdd" text="Add" type="Emphasized" press="onAdd"/>
+      </OverflowToolbar>
     <Table id="idProducts" items="{/results}">
+     <headerToolbar>
+          <Toolbar id="idToolbar">
+            <Title id="idTitle" text="Products" />
+          </Toolbar>
+        </headerToolbar>
     <columns> 
         <Column id="idIDCol">
             <Text id="idColID" text="ID"></Text>
@@ -40,5 +59,6 @@
     </ColumnListItem>
     </items>
     </Table>
+    </content>
     </Page>
 </mvc:View>

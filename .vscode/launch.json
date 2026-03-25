@@ -428,10 +428,143 @@
       }
     },
     {
-        "name": "Start docdemo",
+      "name": "Start docdemo",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/docdemo",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--open",
+        "test/flp.html#app-preview"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "env": {
+        "DEBUG": "--inspect",
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/docdemo\"}"
+      }
+    },
+    {
+      "name": "Start docdemo Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/docdemo",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--config",
+        "./ui5-local.yaml",
+        "--open",
+        "test/flp.html#app-preview"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/docdemo\"}"
+      }
+    },
+    {
+      "name": "Start odatacrud",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/odatacrud",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--open",
+        "test/flp.html#app-preview"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "env": {
+        "DEBUG": "--inspect",
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/odatacrud\"}"
+      }
+    },
+    {
+      "name": "Start odatacrud Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/odatacrud",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--config",
+        "./ui5-local.yaml",
+        "--open",
+        "test/flp.html#app-preview"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/odatacrud\"}"
+      }
+    },
+    {
+      "name": "Start odatacrud Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/odatacrud",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--config",
+        "./ui5-mock.yaml",
+        "--open",
+        "test/flp.html#app-preview"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/odatacrud\"}"
+      }
+    },
+    {
+        "name": "Start project2",
         "type": "node",
         "request": "launch",
-        "cwd": "${workspaceFolder}/docdemo",
+        "cwd": "${workspaceFolder}/project2",
         "runtimeExecutable": "npx",
         "windows": {
             "runtimeExecutable": "npx.cmd"
@@ -450,14 +583,14 @@
         "env": {
             "DEBUG": "--inspect",
             "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
-            "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/docdemo\"}"
+            "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/project2\"}"
         }
     },
     {
-        "name": "Start docdemo Local",
+        "name": "Start project2 Local",
         "type": "node",
         "request": "launch",
-        "cwd": "${workspaceFolder}/docdemo",
+        "cwd": "${workspaceFolder}/project2",
         "runtimeExecutable": "npx",
         "windows": {
             "runtimeExecutable": "npx.cmd"
@@ -477,67 +610,14 @@
         "outputCapture": "std",
         "env": {
             "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
-            "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/docdemo\"}"
+            "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/project2\"}"
         }
     },
     {
-        "name": "Start odatacrud",
+        "name": "Start project2 Mock",
         "type": "node",
         "request": "launch",
-        "cwd": "${workspaceFolder}/odatacrud",
-        "runtimeExecutable": "npx",
-        "windows": {
-            "runtimeExecutable": "npx.cmd"
-        },
-        "runtimeArgs": [
-            "fiori",
-            "run"
-        ],
-        "args": [
-            "--open",
-            "test/flp.html#app-preview"
-        ],
-        "console": "internalConsole",
-        "internalConsoleOptions": "openOnSessionStart",
-        "outputCapture": "std",
-        "env": {
-            "DEBUG": "--inspect",
-            "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
-            "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/odatacrud\"}"
-        }
-    },
-    {
-        "name": "Start odatacrud Local",
-        "type": "node",
-        "request": "launch",
-        "cwd": "${workspaceFolder}/odatacrud",
-        "runtimeExecutable": "npx",
-        "windows": {
-            "runtimeExecutable": "npx.cmd"
-        },
-        "runtimeArgs": [
-            "fiori",
-            "run"
-        ],
-        "args": [
-            "--config",
-            "./ui5-local.yaml",
-            "--open",
-            "test/flp.html#app-preview"
-        ],
-        "console": "internalConsole",
-        "internalConsoleOptions": "openOnSessionStart",
-        "outputCapture": "std",
-        "env": {
-            "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
-            "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/odatacrud\"}"
-        }
-    },
-    {
-        "name": "Start odatacrud Mock",
-        "type": "node",
-        "request": "launch",
-        "cwd": "${workspaceFolder}/odatacrud",
+        "cwd": "${workspaceFolder}/project2",
         "runtimeExecutable": "npx",
         "windows": {
             "runtimeExecutable": "npx.cmd"
@@ -557,7 +637,7 @@
         "outputCapture": "std",
         "env": {
             "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
-            "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/odatacrud\"}"
+            "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/project2\"}"
         }
     }
   ]
