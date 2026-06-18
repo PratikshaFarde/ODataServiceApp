@@ -1,0 +1,34 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" 
+          controllerName="my.app.controller.Main">
+    <VBox class="sapUiSmallMargin">
+        <!-- Dropdown List -->
+        <Label text="Select State:" labelFor="stateSelect" />
+        <Select id="stateSelect" change="onStateChange">
+            <items>
+                <core:Item key="" text="-- Select State --" />
+                <core:Item key="NY" text="New York" />
+                <core:Item key="CA" text="California" />
+                <core:Item key="TX" text="Texas" />
+                <core:Item key="FL" text="Florida" />
+            </items>
+        </Select>
+
+        <!-- Results Table -->
+        <Table id="locationTable" items="{locationModel>/selectedData}" class="sapUiMediumMarginTop">
+            <columns>
+                <Column><Text text="State Code" /></Column>
+                <Column><Text text="State Name" /></Column>
+                <Column><Text text="Country" /></Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{locationModel>stateCode}" />
+                        <Text text="{locationModel>stateName}" />
+                        <Text text="{locationModel>country}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </VBox>
+</mvc:View>

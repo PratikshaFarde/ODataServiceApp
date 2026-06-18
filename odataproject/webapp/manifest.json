@@ -69,12 +69,17 @@
         "settings": {}
       }
     },
-    "resources": {
-      "css": [
-        {
-          "uri": "css/style.css"
-        }
-      ]
+        "resources": {
+          "js": [
+            {
+                "uri": "libs/xlsx.full.min.js"
+            }
+        ],
+        "css": [
+          {
+            "uri": "css/style.css"
+          }
+        ]
     },
     "routing": {
       "config": {
@@ -109,6 +114,13 @@
           "target": [
             "TargetTable"
           ]
+        },
+        {
+          "name": "RouteViewFileUpload",
+          "pattern": "FileUpload",
+          "target": [
+            "TargetFileUpload"
+          ]
         }
       ],
       "targets": {
@@ -131,8 +143,15 @@
           "transition":"slide",
           "clearControlAggregation": false,
           "viewName": "Table",
-           "viewLevel": 3
-        }
+           "viewLevel": 4
+        },
+         "TargetFileUpload": {
+         "viewType": "XML",
+         "transition": "slide",
+         "clearControlAggregation": false,
+         "viewName": "FileUpload", 
+         "viewLevel": 3
+}
       }
     },
     "rootView": {

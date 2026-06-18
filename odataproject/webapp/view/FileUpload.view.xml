@@ -1,0 +1,75 @@
+<mvc:View controllerName="odataproject.controller.FileUpload"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:unified="sap.ui.unified"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    
+    <Page id="excelPage" title="Excel Data Preview">
+        <content>
+            <!-- SECTION 1: File Uploader & Excel Table -->
+            <VBox class="sapUiSmallMargin">
+                <unified:FileUploader 
+                    id="excelUploader"
+                    fileType="xlsx,XLSX" 
+                    change="onExcelUpload"
+                    buttonOnly="false"
+                    uploadOnChange="false"
+                    icon="sap-icon://upload"
+                    class="sapUiSmallMarginBottom"/>
+                    
+                <Table id="excelDataTable" items="{excelModel>/items}">
+                    <columns>
+                        <Column><Text text="ID" /></Column>
+                        <Column><Text text="Name" /></Column>
+                        <Column><Text text="Designation" /></Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{excelModel>ID}" />
+                                <Text text="{excelModel>Name}" />
+                                <Text text="{excelModel>Designation}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+
+            <!-- SECTION 2: State Dropdown & Location Table -->
+            <VBox class="sapUiSmallMargin">
+                <Label text="Select State:" labelFor="stateSelect" />
+                <Select id="stateSelect" 
+                        change="onStateChange" 
+                        class="sapUiSmallMarginBottom"
+                        items="{dropdownModel>/states}">
+                    <items>
+                     <core:Item key="{dropdownModel>key}" text="{dropdownModel>text}" />
+                    </items>
+                </Select>
+
+                <Table id="locationTable" items="{locationModel>/selectedData}">
+                    <columns>
+                        <Column><Text text="State Code" /></Column>
+                        <Column><Text text="State Name" /></Column>
+                        <Column><Text text="Country" /></Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{locationModel>stateCode}" />
+                                <Text text="{locationModel>stateName}" />
+                                <Text text="{locationModel>country}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
+
+<!-- <core:Item key="" text=" Select State " />
+                        <core:Item key="NY" text="New York" />
+                        <core:Item key="CA" text="California" />
+                        <core:Item key="TX" text="Texas" />
+                        <core:Item key="FL" text="Florida" /> -->

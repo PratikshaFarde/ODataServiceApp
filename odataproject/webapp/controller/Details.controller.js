@@ -8,7 +8,7 @@ oRouter.getRoute("RouteViewDetail").attachPatternMatched(this._onObjectMatched, 
 },
 onNext: function(){
     var router = sap.ui.core.UIComponent.getRouterFor(this);
-    router.navTo("RouteViewTable");
+    router.navTo("RouteViewFileUpload");
 },
 
 _onObjectMatched: function(oEvent){
