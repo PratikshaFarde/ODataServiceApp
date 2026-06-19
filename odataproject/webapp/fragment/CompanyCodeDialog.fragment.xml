@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <SelectDialog
+        id="companyCodeDialog"
+        title="Select Company Code"
+        noDataText="No Company Codes Found"
+        search=".onValueHelpSearch"
+        confirm=".onValueHelpConfirm"
+        cancel=".onValueHelpClose"
+        items="{testModel>/CompanyCodeSet}"> <!-- Replace with your real metadata EntitySet collection -->
+        <StandardListItem
+            title="{testModel>CompanyCode}" 
+            description="{testModel>CompanyName}" 
+            type="Active" />
+    </SelectDialog>
+</core:FragmentDefinition>

@@ -124,6 +124,14 @@ sap.ui.define([
             // var aCurrentData = oModel.getProperty("/selectedData");
             // aCurrentData.push(oNewRow);
             // oModel.setProperty("/selectedData", aCurrentData);
+        },
+
+        onNavigateNext: function () {
+            // 1. Get the router instance for your app
+            var oRouter = this.getOwnerComponent().getRouter();
+            
+            // 2. Navigates to the target route defined in your manifest.json
+            oRouter.navTo("RouteOrderListPage"); 
         }
 
     });

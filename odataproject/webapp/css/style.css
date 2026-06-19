@@ -1,1 +1,17 @@
-/* Enter your custom styles here */
+/* Removes backgrounds and borders from inputs inside the specific grid table */
+.fullWidthGridInput .sapMInputBaseInner {
+    border: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Optional: Highlights the cell with a subtle background only when focused/clicked */
+.fullWidthGridInput .sapMInputBaseInner:focus {
+    background-color: #ffffff !important;
+    outline: 2px solid #005A9E !important; /* Standard SAP Fiori blue focus line */
+}
+
+/* Removes standard cell padding so inputs stretch completely edge-to-edge */
+.fullWidthGridInput .sapUiTableCtrlMod .sapUiTableTD {
+    padding: 0 !important;
+}

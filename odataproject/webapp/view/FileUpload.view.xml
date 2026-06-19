@@ -64,6 +64,14 @@
                     </items>
                 </Table>
             </VBox>
+            <VBox class="sapUiSmallMargin" alignImages="End">
+                <Button 
+                    text="Next Screen" 
+                    type="Emphasized" 
+                    icon="sap-icon://navigation-right-arrow" 
+                    iconFirst="false"
+                    press="onNavigateNext" />
+            </VBox>
         </content>
     </Page>
 </mvc:View>

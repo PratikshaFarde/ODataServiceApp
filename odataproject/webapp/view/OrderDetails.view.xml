@@ -1,0 +1,116 @@
+<mvc:View
+    controllerName="odataproject.controller.OrderDetails"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:t="sap.ui.table">
+    <Page 
+        title="Order Details"
+        showNavButton="true"
+        navButtonPress="onNavBack">
+        <!-- Header Actions -->
+        <headerContent>
+            <Button text="Save Changes" type="Accept" icon="sap-icon://save" press="onSave" />
+        </headerContent>
+        <content>
+            <!-- Header Panel -->
+            <Panel headerText="Header Information for Order #{OrderID}" class="sapUiResponsiveMargin">
+                <f:SimpleForm editable="false" layout="ResponsiveGridLayout">
+                    <f:content>
+                        <Label text="Customer ID" />
+                        <Text text="{CustomerID}" />
+                        
+                        <Label text="Required Date" />
+                        <Text text="{path: 'RequiredDate', type: 'sap.ui.model.type.Date', formatOptions: {style: 'medium'}}" />
+                        
+                        <Label text="Ship Address" />
+                        <Text text="{ShipAddress}, {ShipCity}" />
+
+                        <Label text="Company Code" />
+                        <Input 
+                            id="companyCodeInput"
+                            value="{localUiState>/selectedCompanyText}" 
+                            placeholder="Select Company..." 
+                            showValueHelp="true" 
+                            valueHelpRequest=".onCompanyCodeValueHelp"
+                            width="16rem"/>
+
+                    </f:content>
+                </f:SimpleForm>
+            </Panel>
+
+            <!-- Line Items Table -->
+            <t:Table 
+                id="lineItemsTable"
+                rows="{Order_Details}" 
+                selectionMode="None"
+                visibleRowCountMode="Auto"
+                class="sapUiResponsiveMargin fullWidthGridInput">
+                
+                <!-- Extension toolbar acts as your table header -->
+                <t:extension>
+                    <OverflowToolbar style="Clear">
+                        <Title text="Associated Order Line Items" />
+                    </OverflowToolbar>
+                </t:extension>
+
+                <!-- Definitive Grid Columns -->
+                <t:columns>
+                    <t:Column width="6rem" hAlign="Center">
+                        <Label text="Product ID" />
+                        <t:template>
+                            <Text text="{ProductID}" />
+                        </t:template>
+                    </t:Column>
+
+                    <t:Column hAlign="Center">
+                    <Label text="Unit Price (USD)" /> 
+                    <t:template>
+                        <Input 
+                            value="{UnitPrice}" 
+                            type="Number" 
+                            textAlign="Center" 
+                            width="100%"
+                            class="sapUiSizeCompact" /> 
+                    </t:template>
+                    </t:Column>
+
+                    <t:Column hAlign="Center">
+                        <Label text="Quantity" />
+                        <t:template>
+                            <Input 
+                                value="{Quantity}"
+                                type="Number" 
+                                textAlign="Center" 
+                                width="100%"
+                                />
+                        </t:template>
+                    </t:Column>
+
+                    <t:Column hAlign="Center">
+                    <!-- Move percentage symbol to header -->
+                    <Label text="Discount Value (%)" /> 
+                    <t:template>
+                        <Input 
+                            value="{Discount}" 
+                            type="Number" 
+                            textAlign="Center" 
+                            width="100%" />
+                    </t:template>
+                </t:Column>
+
+               <t:Column width="18rem" hAlign="Center">
+                <Label text="Company Code" />
+                <t:template>
+                    <!-- Binds directly to the same exact local UI state path -->
+                    <Input 
+                        value="{localUiState>/selectedCompanyText}" 
+                        textAlign="Center"
+                        width="100%" />
+                </t:template>
+                </t:Column>
+                </t:columns>
+            </t:Table>
+        </content>
+    </Page>
+</mvc:View>
