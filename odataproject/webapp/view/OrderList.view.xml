@@ -2,7 +2,7 @@
     controllerName="odataproject.controller.OrderList"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Page title="Northwind Orders List" showNavButton="true" navButtonPress="onNavBack">
+    <Page title="Orders List" showNavButton="true" navButtonPress="onNavBack">
         <content>
             <!-- Orders List Table -->
             <Table 
@@ -13,30 +13,31 @@
                 growingThreshold="20"
                 class="sapUiResponsiveMargin">
                 <columns>
-                    <Column>
+                    <Column id="colOrderId">
                         <Text text="Order ID" />
                     </Column>
-                    <Column minScreenWidth="Tablet" demandPopin="true">
+                    <Column id="colCustomerId" minScreenWidth="Tablet" demandPopin="true">
                         <Text text="Customer ID" />
                     </Column>
-                    <Column minScreenWidth="Tablet" demandPopin="true">
+                    <Column id="colOrderDate" minScreenWidth="Tablet" demandPopin="true">
                         <Text text="Order Date" />
                     </Column>
-                    <Column minScreenWidth="Desktop" demandPopin="true">
+                    <Column id="colShipName" minScreenWidth="Desktop" demandPopin="true">
                         <Text text="Ship Name" />
                     </Column>
-                    <Column hAlign="End">
+                    <Column id="colAction" hAlign="End">
                         <Text text="Action" />
                     </Column>
                 </columns>
                 <items>
-                    <ColumnListItem type="Navigation" press="onOrderSelect">
+                    <ColumnListItem id="orderRowItem" type="Navigation" press="onOrderSelect">
                         <cells>
                             <ObjectIdentifier title="{OrderID}" />
                             <Text text="{CustomerID}" />
                             <Text text="{path: 'OrderDate', type: 'sap.ui.model.type.Date', formatOptions: {style: 'medium'}}" />
                             <Text text="{ShipName}" />
-                            <Button text="View Details" type="Emphasized" press="onOrderSelect" />
+                            <!-- Removed redundant press handler from button to let row handle event bubbling -->
+                            <Button text="View Details" type="Emphasized" />
                         </cells>
                     </ColumnListItem>
                 </items>

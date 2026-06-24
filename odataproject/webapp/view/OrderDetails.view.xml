@@ -11,6 +11,7 @@
         <!-- Header Actions -->
         <headerContent>
             <Button text="Save Changes" type="Accept" icon="sap-icon://save" press="onSave" />
+            <Button text="Next" type="Accept" icon="sap-icon://next" press="onNext" />
         </headerContent>
         <content>
             <!-- Header Panel -->

@@ -71,6 +71,24 @@ sap.ui.define([
                 oRouter.navTo("RouteMain", {}, true);
             }
         },
+        onNext: function () {
+             // 1. Get the router instance for your app
+            var oRouter = this.getOwnerComponent().getRouter();
+            
+            // 2. Navigates to the target route defined in your manifest.json
+            oRouter.navTo("RouteSmartTable"); 
+
+            // var oRouter = this.getOwnerComponent().getRouter();
+            // var oView = this.getView();
+            // var oContext = oView.getBindingContext();
+
+            // if (oContext) {
+            //     var sOrderId = oContext.getProperty("OrderID");
+            //     oRouter.navTo("RouteOrderDetail", { orderId: sOrderId });
+            // } else {
+            //     MessageToast.show("No order selected to navigate to.");
+            // }
+        },
 
         onSave: function () {
             var oModel = this.getView().getModel();

@@ -1,0 +1,63 @@
+<mvc:View xmlns:chart="sap.fe.macros.chart"  controllerName="odataproject.controller.SmartTable"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable">
+
+    <Page id="pageSmartTable" title="Smart Table" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <smartFilterBar:SmartFilterBar 
+                id="smartFilterBar" entitySet="Orders" liveMode="false" showClearButton="true" showRestoreButton="true" search="onSearch">
+                
+                <smartFilterBar:controlConfiguration>
+                
+                    <!-- Correct configuration for a filter field -->
+                    <smartFilterBar:ControlConfiguration 
+                        id="cfgOrderId"
+                        key="OrderID" 
+                        visible="true"
+                        visibleInAdvancedArea="true" />
+                        
+                    <smartFilterBar:ControlConfiguration 
+                        id="cfgOrderDate"
+                        key="OrderDate" 
+                        visible="true"
+                        visibleInAdvancedArea="true" />
+
+                </smartFilterBar:controlConfiguration>
+
+            </smartFilterBar:SmartFilterBar>
+
+            <smartTable:SmartTable id="smartTable" smartFilterId="smartFilterBar"
+                entitySet="Orders" enableAutoBinding="true"
+                tableType="ResponsiveTable"
+                useExportToExcel="true" 
+                useVariantManagement="true"
+                useTablePersonalisation="true"
+                header="Orders Table" 
+                initiallyVisibleFields="CustomerID,OrderID,OrderDate,ShipName,ShipAddress,ShipCity,employeeID,ShippedDate,ShipCountry,ShipPostalCode"
+                showRowCount="true">
+               <Table id="idResponsiveTable" selectionChange="onSelectionChange" mode="SingleSelectMaster">
+               <columns>
+                    <Column id="extCustomActionColumn" width="120px" hAlign="End">
+                        <Text text="Action" />
+                        <customData>
+                            <core:CustomData key="p13nData" value='{"columnKey": "CustomActionKey", "columnIndex": 100}' />
+                        </customData>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="extCustomRowTemplate">
+                        <cells>
+                            <Button id="btnViewAction" text="View Details" type="Emphasized" press="onCustomActionPress" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+
+               </Table>
+            </smartTable:SmartTable>
+        </content>
+    </Page>
+</mvc:View>
