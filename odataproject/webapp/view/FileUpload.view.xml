@@ -16,6 +16,17 @@
                     uploadOnChange="false"
                     icon="sap-icon://upload"
                     class="sapUiSmallMarginBottom"/>
+                <unified:FileUploader 
+                    id="pdfUploader"
+                    name="myFileUpload"
+                    uploadUrl="" 
+                    fileType="pdf"
+                    change="onFileChange"
+                    sendXHR="true"
+                    useMultipart="false"
+                    headerParameters="" />
+                    
+            <Button text="Upload PDF" press="onUploadPress" type="Emphasized"/>
                     
                 <Table id="excelDataTable" items="{excelModel>/items}">
                     <columns>

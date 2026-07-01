@@ -132,7 +132,60 @@ sap.ui.define([
             
             // 2. Navigates to the target route defined in your manifest.json
             oRouter.navTo("RouteOrderListPage"); 
-        }
+        },
 
+        onFileChange: function(oEvent) {
+            var oFileUploader = oEvent.getSource();
+            var file = oEvent.getParameter("files")[0];
+            
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var vContent = e.target.result;
+                    // Store base64 data (strip the data:application/pdf;base64, prefix)
+                    this._fileContent = vContent.split(",")[1];
+                    this._fileName = file.name;
+                }.bind(this);
+                reader.readAsDataURL(file);
+            }
+        },
+        
+        onUploadPress: function () {
+          var oFileUploader = this.byId("pdfUploader");
+            
+            // 1. Get the DOM input element inside the UI5 control
+            var oDomRef = oFileUploader.getFocusDomRef();
+            var oFile = oDomRef.files[0];
+
+            if (!oFile) {
+                MessageToast.show("Please select a local PDF file first.");
+                return;
+            }
+            // 2. Initialize the standard JavaScript FileReader
+            var oReader = new FileReader();
+
+            // 3. Define what happens once the file is fully read
+            oReader.onload = function (e) {
+                var sRawResult = e.target.result;
+                
+            // This splits the header metadata to leave you with the pure base64 string
+                var sBase64Data = sRawResult.split(",")[1]; 
+
+            // 4. Print results to your browser developer console (F12) to inspect
+                console.log("=== POC PDF SUCCESS ===");
+                console.log("File Name Target:", oFile.name);
+                console.log("File Size Target:", oFile.size, "bytes");
+                console.log("Raw Base64 Payload:", sBase64Data);
+                console.log("=======================");
+
+            // 5. Visual confirmation pop-up inside your Fiori Application
+                MessageBox.success("Fiori successfully read '" + oFile.name + "'!\n\nOpen your Browser Developer Console (F12) to see the generated Base64 data string payload.");
+            };
+
+            // 4. Trigger the local read as a DataURL string
+                oReader.readAsDataURL(oFile);
+                MessageToast.show("Reading local file contents...");
+        }
+        
     });
 });

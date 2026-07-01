@@ -1,5 +1,7 @@
-<mvc:View xmlns:form="sap.ui.layout.form" controllerName="odataproject.controller.Details"
+<mvc:View xmlns:form="sap.ui.layout.form" 
+    controllerName="odataproject.controller.Details"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
     xmlns="sap.m">
     <Page id="id_page1" title="{i18n>title}">
     <content>
@@ -15,6 +17,17 @@
         <Label id="id_quantity" text="Quantity Per Unit" />
 
         <Text id= "id_txt_quantity" text="{QuantityPerUnit}" /> 
+
+        <ComboBox id="myComboBox"
+                placeholder="Select a country..."
+                change="onSelectionChange" 
+                items="{local>/CountriesCollection}"
+                selectedKey="{local>/SelectedCountry}">
+                <items>
+                    <core:Item key="{local>key}"
+                     text="{local>text}"/>
+                </items>
+            </ComboBox>
         
        <Button id="idNext" text="Next" press=".onNext" />
 
